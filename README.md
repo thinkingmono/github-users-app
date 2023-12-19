@@ -59,7 +59,7 @@ version used - "react-router-dom": "^5.2.0",
 
 - [Fusion Charts - Main Docs](https://www.fusioncharts.com/)
 - [First React Chart](https://www.fusioncharts.com/dev/getting-started/react/your-first-chart-using-react)
-- [List Of Charts](https://www.fusioncharts.com/dev/chart-guide/list-of-charts)
+- [List Of Charts](https://www.fusioncharts.com/dev/chart-guide/list-of-charts) (https://www.fusioncharts.com/charts#fusioncharts) Configuring your charts > List of charts
 - [Themes](https://www.fusioncharts.com/dev/themes/introduction-to-themes)
 
 ## Auth0
