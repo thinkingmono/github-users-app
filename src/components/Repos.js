@@ -5,7 +5,7 @@ import { ExampleChart, Pie3D, Column3D, Bar3D, Doughnut2D } from './Charts';
 
 const Repos = () => {
   const { repos } = React.useContext(GithubContext);
-  console.log(repos);
+  // console.log(repos);
   //Most used languages and most stars
   const languages = repos.reduce((total, item) => {
     const { language, stargazers_count } = item;
@@ -41,9 +41,9 @@ const Repos = () => {
   }, { stars: {}, forks: {} });
 
   stars = Object.values(stars).slice(-5).reverse();
-  console.log(stars);
+  // console.log(stars);
   forks = Object.values(forks).slice(-5).reverse();
-  console.log(forks);
+  // console.log(forks);
 
   //Dumy data.
   const chartData = [
