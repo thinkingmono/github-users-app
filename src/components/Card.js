@@ -3,23 +3,36 @@ import { GithubContext } from '../context/context';
 import styled from 'styled-components';
 import { MdBusiness, MdLocationOn, MdLink } from 'react-icons/md';
 
+//User Information Card
 const Card = () => {
+  //Destructure githubUser from githubContext using useContext hook.
   const { githubUser } = React.useContext(GithubContext);
+  //Destructure githubUser information.
   const { avatar_url, name, twitter_username, html_url, bio, company, location, blog } = githubUser;
   return (
     <Wrapper>
+      {/*Card header*/}
       <header>
+        {/*User's Avatar Image*/}
         <img src={avatar_url} alt={name} />
         <div>
+          {/*User's name*/}
           <h4>{name}</h4>
+          {/*Twitter username*/}
           <p>@{twitter_username || 'N.N'}</p>
         </div>
-        <a href={html_url}>Follow</a>
+        {/*Link to github profile*/}
+        <a href={html_url} target='_blank'>Follow</a>
       </header>
+      {/*User's github bio*/}
       <p className='bio'>{bio}</p>
+      {/*User's information links*/}
       <div className="links">
+        {/*Company*/}
         <p><MdBusiness />{company || 'Enterprise'}</p>
+        {/*Location*/}
         <p><MdLocationOn />{location || 'Earth'}</p>
+        {/*Blog or Webpage Link*/}
         <p><a href={`https://${blog}`}><MdLink />{blog}</a></p>
       </div>
     </Wrapper>

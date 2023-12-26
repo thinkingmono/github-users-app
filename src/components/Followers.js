@@ -2,15 +2,20 @@ import React from 'react';
 import { GithubContext } from '../context/context';
 import styled from 'styled-components';
 
+//Followers Card
 const Followers = () => {
+  //Destructure followers from githubContext using useContext hook
   const { followers } = React.useContext(GithubContext);
-  // console.log(followers);
 
   return (
     <Wrapper>
+      {/*Followers Block*/}
       <div className="followers">
+        {/*Map over followers array*/}
         {followers.map((follower, index) => {
+          //Destructure follower's info.
           const { avatar_url: img, html_url, login } = follower;
+          //Return follower card using destructured info.
           return <article key={index}>
             <img src={img} alt={login} />
             <div>

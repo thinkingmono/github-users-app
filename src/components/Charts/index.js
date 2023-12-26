@@ -1,3 +1,4 @@
+//Import chart components to export it from here.
 import ExampleChart from "./ExampleChart";
 import Column3D from "./Column3D";
 import Bar3D from "./Bar3D";

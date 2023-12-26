@@ -3,31 +3,43 @@ import styled from 'styled-components';
 import { MdSearch } from 'react-icons/md';
 import { GithubContext } from '../context/context';
 const Search = () => {
+  //Declare user state variable to store search field value.
   const [user, setUser] = React.useState('');
+  //Destructure info from githubContext.
   const { request, error, searchGithubUser, isLoading } = React.useContext(GithubContext);
 
+  //Control form's submition
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(user);
+    //Check if search field has a value, an username to search for.
     if (user) {
+      //If user has a value, call searchGithubUser to fetch user's info.
       searchGithubUser(user);
       // setUser('');
     }
   }
+
   return <section className='section'>
     <Wrapper className="section-center">
+      {/*If there fetched user doesn't exist show error*/}
       {error.show && (
         <ErrorWrapper>
           <p>{error.msg}</p>
         </ErrorWrapper>
       )}
+      {/*Search form*/}
       <form onSubmit={handleSubmit}>
         <div className="form-control">
+          {/*Search icon*/}
           <MdSearch />
+          {/*Search input. onChange handle setting user state variable with current field value*/}
           <input type="text" placeholder='enter github user' value={user} onChange={(e) => setUser(e.target.value)} />
+          {/*If there are more than 0 remaining request to API and request is not loading, show search submit button. */}
           {request > 0 && !isLoading && <button type="submit">Search</button>}
         </div>
       </form>
+      {/*Show remaining request*/}
       <h3>Request: {request} / 60</h3>
     </Wrapper>
   </section>;

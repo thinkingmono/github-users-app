@@ -3,10 +3,13 @@ import styled from 'styled-components';
 import Card from './Card';
 import Followers from './Followers';
 
+//User information row.
 const User = () => {
   return <section className='section'>
     <Wrapper className='section-center'>
+      {/*User's card info*/}
       <Card />
+      {/*User's followers*/}
       <Followers />
     </Wrapper>
   </section>;

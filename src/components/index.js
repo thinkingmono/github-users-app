@@ -1,3 +1,4 @@
+//Import components to export it from here.
 import Info from "./Info";
 import Repos from "./Repos";
 import User from "./User";

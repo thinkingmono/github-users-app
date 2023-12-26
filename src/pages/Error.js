@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
+//Error page when there is a 404
 const Error = () => {
   return <Wrapper>
     <div>

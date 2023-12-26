@@ -4,11 +4,14 @@ import styled from 'styled-components';
 import { GoRepo, GoGist } from 'react-icons/go';
 import { FiUsers, FiUserPlus } from 'react-icons/fi';
 
+//User Info Highligths
 const UserInfo = () => {
+  //Destructure githubUser from GithubContext using useContext hook.
   const { githubUser } = React.useContext(GithubContext);
-  // console.log(githubUser);
+  //Destructure user's information highlights
   const { public_repos, followers, following, public_gists } = githubUser;
 
+  //Repos, followers, following, gist highlights array gather each with icon, id, card label and icon color.
   const items = [
     { id: 1, icon: <GoRepo className='icon' />, label: 'repos', value: public_repos, color: 'pink' },
     { id: 2, icon: <FiUsers className='icon' />, label: 'followers', value: followers, color: 'green' },
@@ -17,8 +20,10 @@ const UserInfo = () => {
   ]
 
   return (
+    //Highlights section
     <section className='section'>
       <Wrapper className='section-center'>
+        {/*Map over items array to render highlight card through Item component*/}
         {items.map((item) => {
           return <Item key={item.id} {...item} />
         })}
@@ -27,6 +32,7 @@ const UserInfo = () => {
   );
 };
 
+//Highlight card. Destructure spread item info and render it into JSX structure.
 const Item = ({ icon, label, value, color }) => {
   return <article className="item">
     <span className={color}>{icon}</span>

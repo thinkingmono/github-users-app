@@ -7,7 +7,7 @@ import ReactFC from "react-fusioncharts";
 // Include the fusioncharts library
 import FusionCharts from "fusioncharts";
 
-// Include the chart type
+// Include the default chart type
 import Chart from "fusioncharts/fusioncharts.charts";
 
 // Include the theme as fusion
